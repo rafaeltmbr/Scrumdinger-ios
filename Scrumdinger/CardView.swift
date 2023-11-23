@@ -25,11 +25,12 @@ struct CardView: View {
         }
         .frame(height: 60)
         .padding()
-        .background(scrum.theme.mainColor)
         .foregroundColor(scrum.theme.accentColor)
     }
 }
 
 #Preview {
-    CardView(scrum: DailyScrum.sampleData[2])
+    let scrum = DailyScrum.sampleData[2]
+
+    return CardView(scrum: scrum).background(scrum.theme.mainColor)
 }
