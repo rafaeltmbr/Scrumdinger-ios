@@ -5,7 +5,15 @@ struct DailyScrum: Identifiable {
     var title: String
     var attendees: [Attendee]
     var lengthInMinutes: Int
+    var lengthInMinutesAsDouble: Double {
+        get { Double(lengthInMinutes) }
+        set { lengthInMinutes = Int(newValue) }
+    }
     var theme: Theme
+    
+    static var emptyScrum: DailyScrum {
+        DailyScrum(title: "", attendees: [], lengthInMinutes: 5, theme: .buttercup)
+    }
 }
 
 struct Attendee: Identifiable {
