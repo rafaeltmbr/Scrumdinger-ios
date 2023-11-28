@@ -1,9 +1,10 @@
 import SwiftUI
 
 struct DetailView: View {
-    var scrum: DailyScrum
-    @State private var isPresentingEditView = false
-    
+    @Binding var scrum: DailyScrum
+    @State var editingScrum = DailyScrum.emptyScrum
+    @State var isPresentingEditView = false
+
     var body: some View {
         List {
             Section(header: Text("Meeting info")) {
@@ -12,14 +13,14 @@ struct DetailView: View {
                         .foregroundColor(.accentColor)
                         .font(.headline)
                 }
-                
+
                 HStack {
                     Label("Duration", systemImage: "clock")
                     Spacer()
                     Text("\(scrum.lengthInMinutes) minutes")
                 }
                 .accessibilityElement(children: .combine)
-                
+
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
                     Spacer()
@@ -31,7 +32,7 @@ struct DetailView: View {
                 }
                 .accessibilityElement(children: .combine)
             }
-            
+
             Section(header: Text("Attendees")) {
                 ForEach(scrum.attendees) {attendee in
                     Label(attendee.name, systemImage: "person")
@@ -41,12 +42,13 @@ struct DetailView: View {
         .navigationTitle(scrum.title)
         .toolbar {
             Button("Edit") {
-               isPresentingEditView = true
+                isPresentingEditView = true
+                editingScrum = scrum
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                DetailEditView()
+                DetailEditView(scrum: $editingScrum)
                     .navigationTitle(scrum.title)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -57,19 +59,18 @@ struct DetailView: View {
                         
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Save") {
-                                
                                 isPresentingEditView = false
+                                scrum = editingScrum
                             }
                         }
                     }
             }
-            
         }
     }
 }
 
 #Preview {
     NavigationStack {
-        DetailView(scrum: DailyScrum.sampleData.first!)
+        DetailView(scrum: .constant(DailyScrum.sampleData.first!))
     }
 }

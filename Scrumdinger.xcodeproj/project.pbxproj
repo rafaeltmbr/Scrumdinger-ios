@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A29E96D2B1016B600554329 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A29E96C2B1016B600554329 /* ScrumsView.swift */; };
+		9A49A6242B162B4100DA1E7A /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A49A6232B162B4100DA1E7A /* ThemeView.swift */; };
+		9A49A6272B16459300DA1E7A /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A49A6262B16459300DA1E7A /* ThemePicker.swift */; };
 		9A5835852B12574A009B6B17 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5835842B12574A009B6B17 /* DetailView.swift */; };
 		9A8A28CD2B0B8F85009A412F /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A28CC2B0B8F85009A412F /* ScrumdingerApp.swift */; };
 		9A8A28CF2B0B8F85009A412F /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8A28CE2B0B8F85009A412F /* MeetingView.swift */; };
@@ -42,6 +44,8 @@
 
 /* Begin PBXFileReference section */
 		9A29E96C2B1016B600554329 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
+		9A49A6232B162B4100DA1E7A /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		9A49A6262B16459300DA1E7A /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		9A5835842B12574A009B6B17 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		9A8A28C92B0B8F85009A412F /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A8A28CC2B0B8F85009A412F /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
@@ -85,6 +89,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A49A6252B1642E200DA1E7A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9A8A28CE2B0B8F85009A412F /* MeetingView.swift */,
+				9A29E96C2B1016B600554329 /* ScrumsView.swift */,
+				9A5835842B12574A009B6B17 /* DetailView.swift */,
+				9A98C9FA2B12B5FF002B4D12 /* DetailEditView.swift */,
+				9A49A6232B162B4100DA1E7A /* ThemeView.swift */,
+				9AF345EB2B0EAD0E00F13FA0 /* CardView.swift */,
+				9A49A6262B16459300DA1E7A /* ThemePicker.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9A8A28C02B0B8F85009A412F = {
 			isa = PBXGroup;
 			children = (
@@ -108,16 +126,12 @@
 		9A8A28CB2B0B8F85009A412F /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				9A49A6252B1642E200DA1E7A /* Views */,
 				9AF345ED2B0EADF800F13FA0 /* Models */,
 				9A8A28CC2B0B8F85009A412F /* ScrumdingerApp.swift */,
-				9A8A28CE2B0B8F85009A412F /* MeetingView.swift */,
 				9A8A28D02B0B8F86009A412F /* Assets.xcassets */,
 				9A8A28D22B0B8F86009A412F /* Preview Content */,
-				9AF345EB2B0EAD0E00F13FA0 /* CardView.swift */,
 				9A9EC5262B0EE542004B0E73 /* TrailingIconLabelStyle.swift */,
-				9A29E96C2B1016B600554329 /* ScrumsView.swift */,
-				9A5835842B12574A009B6B17 /* DetailView.swift */,
-				9A98C9FA2B12B5FF002B4D12 /* DetailEditView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -286,6 +300,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A49A6272B16459300DA1E7A /* ThemePicker.swift in Sources */,
 				9AF345F12B0EB93900F13FA0 /* DailyScrum.swift in Sources */,
 				9A5835852B12574A009B6B17 /* DetailView.swift in Sources */,
 				9A98C9FB2B12B5FF002B4D12 /* DetailEditView.swift in Sources */,
@@ -294,6 +309,7 @@
 				9A29E96D2B1016B600554329 /* ScrumsView.swift in Sources */,
 				9AF345EF2B0EAE0D00F13FA0 /* Theme.swift in Sources */,
 				9AF345EC2B0EAD0E00F13FA0 /* CardView.swift in Sources */,
+				9A49A6242B162B4100DA1E7A /* ThemeView.swift in Sources */,
 				9A8A28CD2B0B8F85009A412F /* ScrumdingerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
