@@ -20,7 +20,6 @@ struct CardView: View {
                     .labelStyle(.trailingIcon)
                     .accessibilityLabel("\(dailyScrum.lengthInMinutes) minute meeting")
             }
-            .padding(.trailing, 20)
             .font(.caption)
         }
         .padding()
