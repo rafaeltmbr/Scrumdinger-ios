@@ -15,6 +15,7 @@ struct MeetingView: View {
                 VStack(alignment: .trailing) {
                     Text("Seconds Remaining").font(.caption)
                     Label("600", systemImage: "hourglass.bottomhalf.fill")
+                        .labelStyle(.trailingIcon)
                 }
             }
             .accessibilityElement(children: .ignore)
@@ -35,3 +36,4 @@ struct MeetingView: View {
 #Preview {
     MeetingView()
 }
+ 
