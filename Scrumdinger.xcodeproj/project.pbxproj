@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C9686B82BB0465900161A7D /* ThemePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9686B72BB0465900161A7D /* ThemePickerView.swift */; };
 		4CA952ED2BAF3F8100AD76A2 /* ScrumdingerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA952EC2BAF3F8100AD76A2 /* ScrumdingerApp.swift */; };
 		4CA952EF2BAF3F8100AD76A2 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA952EE2BAF3F8100AD76A2 /* MeetingView.swift */; };
 		4CA952F12BAF3F8200AD76A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4CA952F02BAF3F8200AD76A2 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C9686B72BB0465900161A7D /* ThemePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePickerView.swift; sourceTree = "<group>"; };
 		4CA952E92BAF3F8100AD76A2 /* Scrumdinger.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scrumdinger.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CA952EC2BAF3F8100AD76A2 /* ScrumdingerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumdingerApp.swift; sourceTree = "<group>"; };
 		4CA952EE2BAF3F8100AD76A2 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				4CA953242BAF76B000AD76A2 /* ScrumsView.swift */,
 				4CB8258E2BAF8E24000ACCE7 /* DetailView.swift */,
 				4CB825902BAFA17E000ACCE7 /* DetailEditView.swift */,
+				4C9686B72BB0465900161A7D /* ThemePickerView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				4CA952EF2BAF3F8100AD76A2 /* MeetingView.swift in Sources */,
 				4CA952ED2BAF3F8100AD76A2 /* ScrumdingerApp.swift in Sources */,
 				4CB825912BAFA17E000ACCE7 /* DetailEditView.swift in Sources */,
+				4C9686B82BB0465900161A7D /* ThemePickerView.swift in Sources */,
 				4CA9531C2BAF658100AD76A2 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

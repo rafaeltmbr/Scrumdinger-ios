@@ -2,7 +2,7 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var scrum: DailyScrum
-    
+    @State private var editingScrum = DailyScrum()
     @State private var isEditing: Bool = false
     
     var body: some View {
@@ -43,20 +43,24 @@ struct DetailView: View {
         }
         .navigationTitle(scrum.title)
         .toolbar {
-            Button("Edit") { isEditing = true }
+            Button("Edit") {
+                editingScrum = scrum
+                isEditing = true
+            }
         }
         .sheet(isPresented: $isEditing) {
             NavigationView {
-                DetailEditView(scrum: $scrum) { isEditing = false }
+                DetailEditView(scrum: $editingScrum) {
+                    scrum = editingScrum
+                    isEditing = false
+                }
             }
         }
     }
 }
 
 #Preview {
-    @State var scrum = DailyScrum.sampleData.first!
-    
-    return NavigationView {
-        DetailView(scrum: $scrum)
+    NavigationView {
+        DetailView(scrum: .constant(DailyScrum.sampleData.first!))
     }
 }

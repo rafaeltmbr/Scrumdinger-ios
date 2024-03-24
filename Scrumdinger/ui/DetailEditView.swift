@@ -18,6 +18,8 @@ struct DetailEditView: View {
                     Text("\(Int(scrum.lengthInMinutes)) minutes")
                         .accessibilityHidden(true)
                 }
+                
+                ThemePickerView(theme: $scrum.theme)
             }
             
             Section("Attendees") {
@@ -44,7 +46,7 @@ struct DetailEditView: View {
                 }
             }
         }
-        .navigationTitle("New scrum")
+        .navigationTitle("Edit")
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") { dismiss() }
@@ -60,9 +62,7 @@ struct DetailEditView: View {
 }
 
 #Preview {
-    @State var scrum = DailyScrum()
-
-    return NavigationView {
-        DetailEditView(scrum: $scrum) {}
+    NavigationView {
+        DetailEditView(scrum: .constant(DailyScrum())) {}
     }
 }
