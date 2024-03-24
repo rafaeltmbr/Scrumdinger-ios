@@ -20,6 +20,7 @@
 		4CA953232BAF716500AD76A2 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA953222BAF716500AD76A2 /* TrailingIconLabelStyle.swift */; };
 		4CA953252BAF76B000AD76A2 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA953242BAF76B000AD76A2 /* ScrumsView.swift */; };
 		4CB8258F2BAF8E24000ACCE7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8258E2BAF8E24000ACCE7 /* DetailView.swift */; };
+		4CB825912BAFA17E000ACCE7 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB825902BAFA17E000ACCE7 /* DetailEditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		4CA953222BAF716500AD76A2 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		4CA953242BAF76B000AD76A2 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		4CB8258E2BAF8E24000ACCE7 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4CB825902BAFA17E000ACCE7 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				4CA953222BAF716500AD76A2 /* TrailingIconLabelStyle.swift */,
 				4CA953242BAF76B000AD76A2 /* ScrumsView.swift */,
 				4CB8258E2BAF8E24000ACCE7 /* DetailView.swift */,
+				4CB825902BAFA17E000ACCE7 /* DetailEditView.swift */,
 			);
 			path = ui;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				4CA953252BAF76B000AD76A2 /* ScrumsView.swift in Sources */,
 				4CA952EF2BAF3F8100AD76A2 /* MeetingView.swift in Sources */,
 				4CA952ED2BAF3F8100AD76A2 /* ScrumdingerApp.swift in Sources */,
+				4CB825912BAFA17E000ACCE7 /* DetailEditView.swift in Sources */,
 				4CA9531C2BAF658100AD76A2 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
