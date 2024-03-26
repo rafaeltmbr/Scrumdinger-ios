@@ -1,39 +1,53 @@
 import SwiftUI
+import AVFoundation
 
 struct MeetingView: View {
+    @StateObject private var timer = MeetingTimer()
+    var scrum: DailyScrum
+    
+    private let player = AVPlayer.sharedDingPlayer
+    
     var body: some View {
         VStack {
-            ProgressView(value: 10, total: 100)
-            HStack {
-                VStack(alignment: .leading) {
-                    Text("Seconds Elapsed").font(.caption)
-                    Label("300", systemImage: "hourglass.tophalf.fill")
-                }
-                
-                Spacer()
-                
-                VStack(alignment: .trailing) {
-                    Text("Seconds Remaining").font(.caption)
-                    Label("600", systemImage: "hourglass.bottomhalf.fill")
-                        .labelStyle(.trailingIcon)
-                }
-            }
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel("Time remaining")
-            .accessibilityValue("10 minutes")
-            
+            MeetingHeaderView(
+                secondsElapsed: timer.secondsElapsed,
+                secondsRemaining: timer.secondsReamining
+            ).padding(.horizontal)
+
             Circle().strokeBorder(lineWidth: 24)
             
             HStack {
-                Text("Speaker 1 of 3")
-                Spacer()
-                Button("", systemImage: "forward.fill") { }.accessibilityLabel("Next speaker")
+                if timer.isSkipAllowed {
+                    Text("Speaker \(timer.currentSpeaker) of \(scrum.attendees.count)")
+                    Spacer()
+                    Button("", systemImage: "forward.fill") {
+                        timer.skip()
+                    }
+                    .accessibilityLabel("Next speaker")
+                    .disabled(!timer.isSkipAllowed)
+                    .opacity(timer.isSkipAllowed ? 1.0 : 0.5)
+                } else {
+                    Text(timer.secondsReamining > 0 ? "Last speaker" : "No more speakers")
+                }
             }
-        }.padding()
+            .padding(.horizontal)
+        }
+        .padding(.vertical)
+        .background(scrum.theme.mainColor)
+        .foregroundColor(scrum.theme.accentColor)
+        .cornerRadius(16)
+        .padding()
+        .navigationBarTitleDisplayMode(.inline)
+        .onAppear {
+            timer.start(scrum: scrum) {
+                player.seek(to: .zero)
+                player.play()
+            }
+        }
     }
 }
 
 #Preview {
-    MeetingView()
+    MeetingView(scrum: DailyScrum.sampleData.first!)
 }
  

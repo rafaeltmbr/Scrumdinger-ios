@@ -47,6 +47,7 @@ struct DetailEditView: View {
             }
         }
         .navigationTitle("Edit")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") { dismiss() }

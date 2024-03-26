@@ -9,7 +9,7 @@ struct DetailView: View {
         VStack {
             List {
                 Section("Info") {
-                    NavigationLink(destination: MeetingView()) {
+                    NavigationLink(destination: MeetingView(scrum: scrum)) {
                         Label("Start meeting", systemImage: "timer")
                             .font(.headline)
                             .foregroundColor(.accentColor)
