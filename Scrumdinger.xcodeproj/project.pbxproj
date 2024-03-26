@@ -21,6 +21,7 @@
 		4CA9531C2BAF658100AD76A2 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA9531B2BAF658100AD76A2 /* CardView.swift */; };
 		4CA953232BAF716500AD76A2 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA953222BAF716500AD76A2 /* TrailingIconLabelStyle.swift */; };
 		4CA953252BAF76B000AD76A2 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA953242BAF76B000AD76A2 /* ScrumsView.swift */; };
+		4CB2D8972BB388B0000E8EB5 /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 4CDD51A72BB37F230094AADC /* ding.wav */; };
 		4CB8258F2BAF8E24000ACCE7 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8258E2BAF8E24000ACCE7 /* DetailView.swift */; };
 		4CB825912BAFA17E000ACCE7 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB825902BAFA17E000ACCE7 /* DetailEditView.swift */; };
 		4CB8CA1C2BB237EE00466B36 /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB8CA1B2BB237EE00466B36 /* MeetingHeaderView.swift */; };
@@ -306,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4CB2D8972BB388B0000E8EB5 /* ding.wav in Resources */,
 				4CA952F42BAF3F8200AD76A2 /* Preview Assets.xcassets in Resources */,
 				4CA952F12BAF3F8200AD76A2 /* Assets.xcassets in Resources */,
 			);

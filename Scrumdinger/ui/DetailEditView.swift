@@ -1,11 +1,18 @@
 import SwiftUI
 
+
+enum DetailEditViewMode {
+    case edit, create
+}
+
 struct DetailEditView: View {
     @Binding var scrum: DailyScrum
     @State private var attendeeName: String = ""
+    var mode: DetailEditViewMode = .edit
     
     @Environment(\.dismiss) var dismiss: DismissAction
     var onDone: () -> Void
+    
     
     var body: some View {
         Form {
@@ -46,15 +53,15 @@ struct DetailEditView: View {
                 }
             }
         }
-        .navigationTitle("Edit")
+        .navigationTitle(mode == .edit ? "Edit" : "New")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
-                Button("Cancel") { dismiss() }
+                Button(mode == .edit ? "Cancel" : "Dismiss") { dismiss() }
             }
             
             ToolbarItem(placement: .topBarTrailing) {
-                Button("Done", action: onDone)
+                Button(mode == .edit ? "Done" : "Add", action: onDone)
                 .font(.headline)
                 .disabled(scrum.title.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
             }

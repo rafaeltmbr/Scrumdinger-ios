@@ -3,7 +3,7 @@ import AVFoundation
 
 struct MeetingView: View {
     @StateObject private var timer = MeetingTimer()
-    var scrum: DailyScrum
+    @Binding var scrum: DailyScrum
     
     private let player = AVPlayer.sharedDingPlayer
     
@@ -15,22 +15,8 @@ struct MeetingView: View {
             ).padding(.horizontal)
 
             Circle().strokeBorder(lineWidth: 24)
-            
-            HStack {
-                if timer.isSkipAllowed {
-                    Text("Speaker \(timer.currentSpeaker) of \(scrum.attendees.count)")
-                    Spacer()
-                    Button("", systemImage: "forward.fill") {
-                        timer.skip()
-                    }
-                    .accessibilityLabel("Next speaker")
-                    .disabled(!timer.isSkipAllowed)
-                    .opacity(timer.isSkipAllowed ? 1.0 : 0.5)
-                } else {
-                    Text(timer.secondsReamining > 0 ? "Last speaker" : "No more speakers")
-                }
-            }
-            .padding(.horizontal)
+
+            footer
         }
         .padding(.vertical)
         .background(scrum.theme.mainColor)
@@ -38,16 +24,42 @@ struct MeetingView: View {
         .cornerRadius(16)
         .padding()
         .navigationBarTitleDisplayMode(.inline)
-        .onAppear {
-            timer.start(scrum: scrum) {
-                player.seek(to: .zero)
-                player.play()
+        .onAppear(perform: startScrum)
+        .onDisappear(perform: stopScrum)
+    }
+
+    var footer: some View {
+        HStack {
+            if timer.isSkipAllowed {
+                Text("Speaker \(timer.currentSpeaker) of \(scrum.attendees.count)")
+                Spacer()
+                Button("", systemImage: "forward.fill") {
+                    timer.skip()
+                }
+                .accessibilityLabel("Next speaker")
+                .disabled(!timer.isSkipAllowed)
+                .opacity(timer.isSkipAllowed ? 1.0 : 0.5)
+            } else {
+                Text(timer.secondsReamining > 0 ? "Last speaker" : "No more speakers")
             }
         }
+        .padding(.horizontal)
+    }
+    
+    private func startScrum() {
+        timer.start(scrum: scrum) {
+            player.seek(to: .zero)
+            player.play()
+        }
+    }
+    
+    private func stopScrum() {
+        timer.stop()
+        scrum.history.append(DailyScrum.History(attendees: scrum.attendees))
     }
 }
 
 #Preview {
-    MeetingView(scrum: DailyScrum.sampleData.first!)
+    MeetingView(scrum: .constant(DailyScrum.sampleData.first!))
 }
  

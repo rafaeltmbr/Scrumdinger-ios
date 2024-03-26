@@ -2,6 +2,7 @@ import Foundation
 
 class MeetingTimer: ObservableObject {
     @Published private(set) var secondsElapsed: Int = -1
+    private(set) var task: Task<(), Never>!
     
     var secondsReamining: Int {
         guard let scrum else { return 0}
@@ -32,7 +33,7 @@ class MeetingTimer: ObservableObject {
         guard self.scrum == nil else { return }
         self.scrum = scrum
         
-        Task {@MainActor in
+        task = Task {@MainActor in
             while secondsElapsed < scrum.lengthInSeconds {
                 do {
                     let previousSpeakerIndex = currentSpeakerIndex
@@ -48,6 +49,10 @@ class MeetingTimer: ObservableObject {
                 }
             }
         }
+    }
+    
+    func stop() {
+        task.cancel()
     }
 
     func skip() {
