@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum Theme: String, CaseIterable, Hashable, Identifiable {
+enum Theme: String, CaseIterable, Hashable, Identifiable, Codable {
     case bubblegum
     case buttercup
     case indigo

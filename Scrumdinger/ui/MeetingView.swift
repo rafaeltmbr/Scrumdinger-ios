@@ -51,11 +51,11 @@ struct MeetingView: View {
             player.seek(to: .zero)
             player.play()
         }
+        scrum.history.append(DailyScrum.History(attendees: scrum.attendees))
     }
     
     private func stopScrum() {
         timer.stop()
-        scrum.history.append(DailyScrum.History(attendees: scrum.attendees))
     }
 }
 
