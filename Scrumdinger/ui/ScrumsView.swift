@@ -37,5 +37,7 @@ struct ScrumsView: View {
 }
 
 #Preview {
-    ScrumsView(scrums: .constant(DailyScrum.sampleData))
+    ScrumsView(
+        scrums: .constant(DailyScrum.sampleData)
+    )
 }
